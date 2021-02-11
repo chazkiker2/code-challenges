@@ -8,7 +8,7 @@ class CircleTests(unittest.TestCase):
     def test_radius(self):
         """
         A circle should take a radius as an argument, and that radius
-        sholud be accessible as an attribute.
+        should be accessible as an attribute.
         """
 
         circle = Circle(5)
@@ -66,7 +66,7 @@ class CircleTests(unittest.TestCase):
 
     def test_diameter_changeable_but_area_not(self):
         """
-        The value of diameter should *also* be changable, and should update
+        The value of diameter should *also* be changeable, and should update
         the radius automatically, but the area should raise an error when a
         caller attempts to change the value
         """
@@ -86,7 +86,7 @@ class CircleTests(unittest.TestCase):
         """
 
         with self.assertRaises(ValueError) as context:
-            circle = Circle(-2)
+            Circle(-2)
         self.assertEqual(
             str(context.exception).lower(), "radius cannot be negative",
         )
