@@ -10,6 +10,7 @@ class CircleTests(unittest.TestCase):
         A circle should take a radius as an argument, and that radius
         sholud be accessible as an attribute.
         """
+
         circle = Circle(5)
         self.assertEqual(circle.radius, 5)
 
@@ -17,6 +18,7 @@ class CircleTests(unittest.TestCase):
         """
         If no radius is provided, the radius should default to `1`.
         """
+
         circle = Circle()
         self.assertEqual(circle.radius, 1)
 
@@ -24,6 +26,7 @@ class CircleTests(unittest.TestCase):
         """
         The diameter of a circle should always be the radius of the circle times 2.
         """
+
         circle = Circle(2)
         self.assertEqual(circle.diameter, 4)
 
@@ -31,6 +34,7 @@ class CircleTests(unittest.TestCase):
         """
         The area of a circle should always be `π * diameter`
         """
+
         circle = Circle(2)
         self.assertEqual(circle.area, math.pi * 4)
         circle = Circle(1)
@@ -41,6 +45,7 @@ class CircleTests(unittest.TestCase):
         Circle should have a both a `str` representation and a `repr`
         representation equal to `Circle(radius)`
         """
+
         circle = Circle(2)
         self.assertEqual(str(circle), "Circle(2)")
         self.assertEqual(repr(circle), "Circle(2)")
@@ -52,6 +57,7 @@ class CircleTests(unittest.TestCase):
         Both the area and the diameter of the circle should update
         automatically when the radius changes.
         """
+
         circle = Circle(2)
         self.assertEqual(circle.diameter, 4)
         circle.radius = 3
@@ -64,6 +70,7 @@ class CircleTests(unittest.TestCase):
         the radius automatically, but the area should raise an error when a
         caller attempts to change the value
         """
+
         circle = Circle(2)
         self.assertEqual(circle.diameter, 4)
         self.assertEqual(circle.area, math.pi * 4)
@@ -77,6 +84,7 @@ class CircleTests(unittest.TestCase):
         A `ValueError` exception with the message 'radius cannot be negative'
         should be raised if a negative number is supplied for the radius.
         """
+
         with self.assertRaises(ValueError) as context:
             circle = Circle(-2)
         self.assertEqual(
